@@ -1,0 +1,12 @@
+---
+- name: Installation des serveurs web et database
+  hosts: ansiblejenkins
+  remote_user: fitec
+  become: true
+
+  tasks:
+  - name: Installation of git et docker.io
+    apt : name={{ item }} update_cache=yes state=latest 
+    loop:
+        - git
+        - docker.io
