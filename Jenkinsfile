@@ -35,7 +35,7 @@ node {
         imageBuild(CONTAINER_NAME, CONTAINER_TAG)
     }
 
-/*    stage('Push to Docker Registry'){
+    stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
         }
@@ -43,7 +43,6 @@ node {
 
     stage('Run App'){
         runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT)
-    }*/
 
 }
 
